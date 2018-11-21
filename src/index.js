@@ -1,16 +1,18 @@
 //import express from 'express';
+//import constants  from './config/constants.js';
+ const constants = require('./config/constants');
 const express = require('express');
 const app = express();
-const PORT = process.env.PORT || 3000;
+//const PORT = constants.PORT || 3000;
 
-app.listen(PORT, err => {
+app.listen(constants.PORT, err => {
   if (err) {
     throw err;
   } else {
-    console.log(`Server running on port: ${PORT}
-    \n-----
-    \nRunning on ${process.env.NODE_ENV}
-    \n-----
-    \nHave a nice day`);
+    console.log(
+      `Server running on port: ${constants.PORT} --- Running on ${
+        process.env.NODE_ENV
+      } --- Have a nice day.`,
+    );
   }
 });
